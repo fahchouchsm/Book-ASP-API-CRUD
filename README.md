@@ -56,11 +56,3 @@ PUT /api/books/{id}
 
 # Delete a book
 DELETE /api/books/{id}
-
----
-
-## Notes
-
-# Keep business logic in services, not controllers
-# Use DTOs and validation for input
-# Use async methods for performance
