@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
+    <!-- <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    /> -->
+    <title>Horaires de Prière</title>
+    <style>
+      .font-roboto {
+        font-family: 'Roboto', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="flex flex-col justify-center items-center mt-10 font-roboto">
+    <h1 class="text-3xl font-bold mb-6">Horaires de Prière</h1>
+    <p
+      class="text-lg mb-4"
+      id="date"
+    >
+      Chargement...
+    </p>
+
+    <table
+      class="w-full max-w-md border border-gray-300 rounded-lg overflow-hidden shadow-lg"
+    >
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="p-3 text-left font-semibold uppercase">Prière</th>
+          <th class="p-3 text-left font-semibold uppercase">Heure</th>
+        </tr>
+      </thead>
+      <tbody id="prayer-times">
+        <tr>
+          <td
+            class="p-3"
+            colspan="2"
+          >
+            Chargement...
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      function fetchPrayerTimes() {
+        navigator.geolocation.getCurrentPosition(
+          function (position) {
+            console.log(position);
+          },
+          function (error) {
+            console.error('Erreur de géolocalisation:', error.message);
+          },
+        );
+        // const url =
+        //   'https://api.aladhan.com/v1/timings?latitude=34.695297&longitude=-1.944825&method=2';
+        // const xhr = new XMLHttpRequest();
+
+        // xhr.onloadstart = function () {
+        //   document.getElementById('prayer-times').innerHTML =
+        //     '<tr><td colspan="2" class="p-3">Chargement en cours...</td></tr>';
+        // };
+
+        // xhr.onloadend = function () {
+        //   if (xhr.status === 200) {
+        //     const data = JSON.parse(xhr.responseText);
+        //     document.getElementById(
+        //       'date',
+        //     ).innerHTML = `Date : ${data.data.date.readable} <strong>(Hijri: ${data.data.date.hijri.date})</strong>`;
+
+        //     const horaires = data.data.timings;
+        //     const tableBody = document.getElementById('prayer-times');
+        //     tableBody.innerHTML = `
+        //       <tr class="border-t border-gray-300">
+        //         <td class="p-3">Fajr</td>
+        //         <td class="p-3">${horaires.Fajr}</td>
+        //       </tr>
+        //       <tr class="border-t border-gray-300">
+        //         <td class="p-3">Dhuhr</td>
+        //         <td class="p-3">${horaires.Dhuhr}</td>
+        //       </tr>
+        //       <tr class="border-t border-gray-300">
+        //         <td class="p-3">Asr</td>
+        //         <td class="p-3">${horaires.Asr}</td>
+        //       </tr>
+        //       <tr class="border-t border-gray-300">
+        //         <td class="p-3">Maghrib</td>
+        //         <td class="p-3">${horaires.Maghrib}</td>
+        //       </tr>
+        //       <tr class="border-t border-gray-300">
+        //         <td class="p-3">Isha</td>
+        //         <td class="p-3">${horaires.Isha}</td>
+        //       </tr>
+        //     `;
+        //   } else {
+        //     document.getElementById(
+        //       'prayer-times',
+        //     ).innerHTML = `<tr><td colspan="2" class="p-3 text-red-500">Échec du chargement</td></tr>`;
+        //   }
+        // };
+
+        // xhr.open('GET', url);
+        // xhr.send();
+      }
+
+      fetchPrayerTimes();
+    </script>
+  </body>
+</html>

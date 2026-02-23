@@ -1,0 +1,55 @@
+@model forExam.ViewModels.LoginVM
+
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-5">
+            <div class="card shadow-sm border-0">
+                <div class="card-body p-4">
+                    <h2 class="text-center mb-4">🔐 Login</h2>
+
+                    <form asp-action="Login" asp-controller="Login" method="post" novalidate>
+                        @Html.AntiForgeryToken()
+
+                        <div class="mb-3">
+                            <label asp-for="email" class="form-label">Email</label>
+                            <input asp-for="email" class="form-control" placeholder="simo@gmail.com" />
+                            <span asp-validation-for="email" class="text-danger small"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="password" class="form-label">Password</label>
+                            <input asp-for="password" class="form-control" placeholder="••••••••" />
+                            <span asp-validation-for="password" class="text-danger small"></span>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                🚀 Se connecter
+                            </button>
+                        </div>
+
+                        @* Petit message si login échoue (optionnel) *@
+                        @if (ViewBag.Error != null)
+                        {
+                            <div class="alert alert-danger mt-3 mb-0">
+                                ❌ @ViewBag.Error
+                            </div>
+                        }
+                    </form>
+                </div>
+            </div>
+
+            <p class="text-center text-muted mt-3 mb-0">
+                🔥 Tip: utilise un vrai email + mot de passe test
+            </p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

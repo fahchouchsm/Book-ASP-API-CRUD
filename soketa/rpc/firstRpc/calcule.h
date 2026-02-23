@@ -1,0 +1,53 @@
+#ifndef _CALCULE_H_RPCGEN
+#define _CALCULE_H_RPCGEN
+
+#include <rpc/rpc.h>
+
+#ifdef __cplusplus
+extern "C" {
+	#endif
+	
+	
+	struct operandes {
+		float x;
+		float y;
+	};
+	typedef struct operandes operandes;
+	
+	#define MATHS_PROG 0x20000002
+	#define MATH_VERSION_1 1
+	
+	#if defined(__STDC__) || defined(__cplusplus)
+	#define PUISS2 1
+	extern  int * puiss2_1(int *, CLIENT *);
+	extern  int * puiss2_1_svc(int *, struct svc_req *);
+	#define MULTXY 2
+	extern  float * multxy_1(operandes *, CLIENT *);
+	extern  float * multxy_1_svc(operandes *, struct svc_req *);
+	extern int maths_prog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
+
+	#else
+	#define PUISS2 1
+	extern  int * puiss2_1();
+	extern  int * puiss2_1_svc();
+	#define MULTXY 2
+	extern  float * multxy_1();
+	extern  float * multxy_1_svc();
+	extern int maths_prog_1_freeresult ();
+	#endif
+	
+
+	
+	#if defined(__STDC__) || defined(__cplusplus)
+	extern  bool_t xdr_operandes (XDR *, operandes*);
+	
+	#else
+	extern bool_t xdr_operandes ();
+	
+	#endif
+	
+	#ifdef __cplusplus
+}
+#endif
+
+#endif

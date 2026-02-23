@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' https://api.weatherapi.com https://cdnjs.cloudflare.com data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; media-src *; img-src 'self' data:;"
+    />
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="css/index.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="loading-overlay">
+      <i class="fas fa-sun size"></i>
+    </div>
+
+    <div class="container">
+      <div class="part1">
+        <div class="left">
+          <h1 id="temp"></h1>
+          <h2 id="city"></h2>
+        </div>
+        <div class="right">
+          <i
+            id="current-weather-icon"
+            class="fa-solid fa-cloud"
+          ></i>
+        </div>
+      </div>
+      <div class="part2">
+        <p id="temperature-range"></p>
+        <p id="last-updated"></p>
+      </div>
+      <div class="part3"></div>
+      <div class="part4">
+        <table>
+          <thead>
+            <tr>
+              <th>Jour</th>
+              <th>Chance de pluie</th>
+              <th>Température maximale</th>
+              <th>Température minimale</th>
+            </tr>
+          </thead>
+          <tbody id="forecast-table"></tbody>
+        </table>
+      </div>
+      <div class="part5">
+        <div class="sun-info">
+          <i class="fas fa-sunrise"></i>
+          <div
+            class="sunrise"
+            id="sunrise"
+          ></div>
+        </div>
+        <div class="sun-info">
+          <i class="fas fa-sunset"></i>
+          <div
+            class="sunset"
+            id="sunset"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

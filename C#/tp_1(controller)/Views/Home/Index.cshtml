@@ -1,0 +1,62 @@
+﻿@using tp_1_controller_
+@using tp_1_controller_.data
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Create Todo</h2>
+
+    <!-- Todo List Section -->
+    <section class="mb-5">
+        <h4 class="mb-3">Your Todos</h4>
+        <div class="row">
+            @foreach (var todo in ViewBag.todos as List<Todo>)
+            {
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">@todo.Libelle</h5>
+                            <p class="card-text">@todo.Description</p>
+                            <span class="badge bg-primary">@todo.Status</span>
+                            <small class="text-muted float-end">@todo.DateLimite.ToShortDateString()</small>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+
+    <!-- Todo Create Form -->
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="card-title mb-4">Add New Todo</h4>
+            <form asp-action="Create" method="post">
+                <div class="mb-3">
+                    <label asp-for="Libelle" class="form-label">Libelle</label>
+                    <input asp-for="Libelle" class="form-control" placeholder="Enter title">
+                    <span asp-validation-for="Libelle" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Description" class="form-label">Description</label>
+                    <textarea asp-for="Description" class="form-control" placeholder="Enter description"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Status" class="form-label">Status</label>
+                    <select asp-for="Status" class="form-select" asp-items="Html.GetEnumSelectList<tp_1_controller_.Enum.Status>()"></select>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="DateLimite" class="form-label">Date Limite</label>
+                    <input asp-for="DateLimite" type="date" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-success w-100">Create Todo</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>login</title>
+  </head>
+  <body>
+    <form
+      action="loginV.php"
+      method="post"
+    >
+      login :
+      <input
+        type="text"
+        pattern="[a-zA-Z0-9]{3,30}"
+        name="login"
+        required
+      />
+      <br />
+      pass :
+      <input
+        type="password"
+        name="pass"
+        pattern="[a-zA-Z0-9 ]{3,30}"
+        required
+      />
+      <br />
+      <button type="submit">Se connecter</button>
+    </form>
+  </body>
+</html>

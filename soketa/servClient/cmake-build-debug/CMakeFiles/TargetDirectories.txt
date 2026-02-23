@@ -1,0 +1,4 @@
+/home/simo/MEGA/ehei/reseaux/servClient/cmake-build-debug/CMakeFiles/server.dir
+/home/simo/MEGA/ehei/reseaux/servClient/cmake-build-debug/CMakeFiles/client.dir
+/home/simo/MEGA/ehei/reseaux/servClient/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/simo/MEGA/ehei/reseaux/servClient/cmake-build-debug/CMakeFiles/rebuild_cache.dir

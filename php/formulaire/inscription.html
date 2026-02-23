@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Form</title>
+  </head>
+  <body>
+    <form
+      action="show.php"
+      method="post"
+    >
+      <!-- nom -->
+      <label for="nom"> Nom :</label>
+      <input
+        type="text"
+        name="nom"
+        pattern="[A-Za-z ]{3,30}"
+        required
+      />
+      <br />
+      <!-- prenom -->
+      <label for="prenom"> Prenom :</label>
+      <input
+        type="text"
+        name="prenom"
+        pattern="[A-Za-z ]{3,30}"
+        id="prenom"
+      />
+      <br />
+      <!-- dateNais -->
+      <label for="dateNais">Date Naissance</label>
+      <input
+        type="date"
+        name="dateNais"
+        id="dateNais"
+        required
+      />
+      <br />
+      <!-- moy -->
+      <label for="moy">Moyenne :</label>
+      <input
+        type="number"
+        name="moy"
+        id="moy"
+        max="20"
+        min="0"
+        required
+      />
+      <br />
+      <!-- select -->
+      <label for="niv">Niveau :</label>
+      <select
+        name="niv"
+        id="niv"
+        required
+      >
+        <option value="bac">Bac</option>
+        <option value="bac2">Bac +2</option>
+        <option value="bac3">Bac +3</option>
+        <option value="bac4">Bac +4</option>
+        <option value="bac5">Bac +5</option>
+      </select>
+      <br />
+      <!-- langues -->
+      <label>Langues :</label>
+      <label for="fr">FR</label>
+      <input
+        type="checkbox"
+        name="fr"
+        id="fr"
+        value="FR"
+      />
+      <br />
+      <label for="ar">AR</label>
+      <input
+        type="checkbox"
+        name="ar"
+        id="ar"
+        value="AR"
+      />
+      <br />
+      <label for="en">EN</label>
+      <input
+        type="checkbox"
+        name="en"
+        id="en"
+        value="EN"
+      />
+      <br />
+      <!-- sexe -->
+      <label>Sexe :</label>
+      <label for="homme">Homme</label>
+      <input
+        type="radio"
+        name="sexe"
+        id="homme"
+        value="homme"
+        required
+      />
+      <label for="femme">Femme</label>
+      <input
+        type="radio"
+        name="sexe"
+        id="femme"
+        value="femme"
+        checked
+        required
+      />
+      <br />
+      <!-- adress -->
+      <label for="adr">Adresse :</label>
+      <textarea
+        name="adr"
+        id="adr"
+      ></textarea>
+      <br />
+      <input type="submit" />
+    </form>
+  </body>
+</html>
